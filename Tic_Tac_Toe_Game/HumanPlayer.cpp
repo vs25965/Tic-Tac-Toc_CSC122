@@ -19,7 +19,7 @@ void HumanPlayer::get_move()
 		cout << "What is your move? ";
 		cin >> move;
 		
-		if (move < 1 || move > 9 || ( cin.fail() || cin.peek() != '\n'))
+		if (move < 1 || move > 9 || (cin.fail() || cin.peek() != '\n'))
 		{
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -27,7 +27,7 @@ void HumanPlayer::get_move()
 			check = false;
 			
 		}
-		if (this->board->get_mark(move) == 'X' || this->board->get_mark(move) == 'O')
+		 else if (this->board->get_mark(move) == 'X' || this->board->get_mark(move) == 'O')
 		{
 			cout << "Spot is already taken! Try again" << endl;
 			check = false;
@@ -35,11 +35,12 @@ void HumanPlayer::get_move()
 		else
 		{
 			check = true;
+			
 		}
 
 
 	}
 
-
 	this->board->move(move, this->mark);
+	
 }
