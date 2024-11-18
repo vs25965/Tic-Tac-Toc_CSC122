@@ -1,15 +1,15 @@
 #include "Console.h"
 #include "Board.h"
 
-
+using namespace std;
 Console::Console(Board* board)
 {
 	this->board = board;
 }
 
-std::string Console::display()
+string Console::display()
 {
-	std::string output = "";
+	string output = "";
 	output += padding;
 	output += board->get_mark(1);
 	output += vertical_separator;

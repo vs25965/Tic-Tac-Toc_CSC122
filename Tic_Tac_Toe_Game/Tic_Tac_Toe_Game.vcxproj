@@ -133,6 +133,9 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menus.cpp" />
+    <ClCompile Include="pyromancer.cpp" />
+    <ClCompile Include="swarm.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
@@ -140,6 +143,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="HumanPlayer.h" />
+    <ClInclude Include="Menus.h" />
+    <ClInclude Include="pyromancer.h" />
+    <ClInclude Include="swarm.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
