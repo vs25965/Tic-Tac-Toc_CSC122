@@ -1,5 +1,7 @@
 #include <iostream>
 #include "HumanPlayer.h"
+#include "Validator.h"
+
 using namespace std;
 
 
@@ -20,36 +22,10 @@ WinningCombos HumanPlayer::get_winning_combos()
 }
 void HumanPlayer::get_move()
 {
-	int move;
-	bool check = false;
-
-	while (!check)
-	{
+	    Validator validate(this->board);
 		cout << "What is your move? ";
-		cin >> move;
-		
-		if (move < 1 || move > 9 || (cin.fail() || cin.peek() != '\n'))
-		{
-			cin.clear();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			cout << "You enter an invalid move! Try again" << endl;
-			check = false;
-			
-		}
-		 else if (this->board->get_mark(move) == 'X' || this->board->get_mark(move) == 'O')
-		{
-			cout << "Spot is already taken! Try again" << endl;
-			check = false;
-		}
-		else
-		{
-			check = true;
-			
-		}
+		int valid_move = validate.validator(1, 9);
 
-
-	}
-
-	this->board->move(move, this->mark);
+	this->board->move(valid_move, this->mark);
 	
 }

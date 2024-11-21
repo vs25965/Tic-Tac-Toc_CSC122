@@ -136,6 +136,7 @@
     <ClCompile Include="Menus.cpp" />
     <ClCompile Include="pyromancer.cpp" />
     <ClCompile Include="swarm.cpp" />
+    <ClCompile Include="Validator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
@@ -146,6 +147,7 @@
     <ClInclude Include="Menus.h" />
     <ClInclude Include="pyromancer.h" />
     <ClInclude Include="swarm.h" />
+    <ClInclude Include="Validator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

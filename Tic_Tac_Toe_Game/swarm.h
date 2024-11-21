@@ -4,6 +4,7 @@
 
 #include "Board.h"
 #include "player.h"
+#include "Validator.h"
 #include "winning_combos.h"
 
 class swarm : public Player

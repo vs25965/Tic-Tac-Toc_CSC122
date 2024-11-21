@@ -26,7 +26,11 @@ public:
         winning_combos.push_back(combo_seven);
         vector<int> combo_eight = { 3, 5, 7 };
         winning_combos.push_back(combo_eight);
- 
+        //combo of size 4
+        vector<int> combo_nine = { 1,3,7,9 };
+        winning_combos.push_back(combo_nine);
+
+
     }
 
     WinningCombos(vector<int> additional_combo)

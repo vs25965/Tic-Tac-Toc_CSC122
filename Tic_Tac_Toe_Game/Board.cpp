@@ -26,3 +26,12 @@ char Board::get_mark(int i)
 {
     return this->moves.at(i - 1);
 }
+bool Board::full_board() {
+    for (int i = 0; i < 9; i++) {
+        // Check if the position is neither 'X' nor 'O'
+        if (moves[i] != 'X' && moves[i] != 'O') {
+            return false; // Found an empty spot
+        }
+    }
+    return true; // No empty spots found
+}

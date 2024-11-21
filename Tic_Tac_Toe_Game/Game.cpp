@@ -17,6 +17,7 @@ Game::Game(Console* console, GameState* game_state, Player* player_one, Player* 
 
 void Game::start()
 {
+    Board board;
     int game_counter = 0;
     while (game_state->current_state(current_player) == "in-progress" && game_state->current_state(other_player) == "in-progress")
     {
@@ -33,20 +34,8 @@ void Game::start()
             current_player = player_one;
             other_player = player_two;
         }
-        if (game_counter == 9)
-        {
-            break;
-        }
+        
     }
-    if (game_counter == 9 && (game_state->current_state(current_player) != "X wins" && game_state->current_state(current_player) != "O wins"))
-    {
-        cout << "It's a draw";
-    }
-    else
-    {
-        cout << game_state->current_state(current_player) << endl;
-        cout << game_state->current_state(other_player) << endl;
-    }
-
-    
+      cout << game_state->current_state(current_player) << endl;
+   
 }

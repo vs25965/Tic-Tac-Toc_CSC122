@@ -11,5 +11,6 @@ public:
 	void clear();
 	void move(int i, char m);
 	char get_mark(int i);
+	bool full_board();
 };
 

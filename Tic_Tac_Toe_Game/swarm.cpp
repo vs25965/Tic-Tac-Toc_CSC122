@@ -25,10 +25,7 @@ WinningCombos swarm::get_winning_combos()
 
 void swarm::get_move()
 {
-	// We need to validate this move!
-	// Oops! Shall We Try Again lab
-	int move;
-	cout << "What is your move? ";
-	cin >> move;
+	Validator validate(this->board);
+	int move = validate.validator(1,9);
 	this->board->move(move, this->mark);
 }

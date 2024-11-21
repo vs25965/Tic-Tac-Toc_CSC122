@@ -3,7 +3,7 @@
 #include "GameState.h"
 #include "Console.h"
 #include "player.h"
-
+#include "Board.h"
 class Game
 {
 private:

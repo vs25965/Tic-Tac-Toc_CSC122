@@ -21,27 +21,30 @@ WinningCombos Pyromancer::get_winning_combos()
 
 void Pyromancer::get_move()
 {
-    // We need to validate this move!
-    // Oops! Shall We Try Again lab
 
-    int option;
-    cout << "Do you want to (1) enter a cell or (2) explode the board?" << endl;
-    cin >> option;
+    Validator validate(this->board);
+    string promt = "Do you want to (1) enter a cell or (2) explode the board? ";
+    int option = validate.two_int_validator(1,2,promt);
     if (option == 1)
     {
-        cout << "Sounds good! Enter a cell between 1 and 9." << endl;
-        int move;
-        cin >> move;
+        cout << "\nSounds good! Enter a cell between 1 and 9 ";
+        int move = validate.validator(1,9);
         this->board->move(move, this->mark);
     }
-    else if (option == 2 && counter == 0)
+    else if (option == 2 && counter_X == 0 && this->get_mark() == 'X')
     {
         cout << "Exploding the board!" << endl;
         this->board->clear();
-        counter++;
+        counter_X ++;
+    }
+    else if (option == 2 && counter_O == 0 && this->get_mark() == 'O')
+    {
+        cout << "Exploding the board!" << endl;
+        this->board->clear();
+        counter_O ++;
     }
     else
     {
-        cout << "\nOops! You already used your power." << endl;
+        cout << "\nOops! You already used your power.Turn for the other player.." << endl;
     }
 }

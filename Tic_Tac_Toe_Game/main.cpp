@@ -8,21 +8,23 @@
 #include "HumanPlayer.h"
 #include "Menus.h"
 #include "Game.h"
+#include "Validator.h"
 
 using namespace std;
 
 int main()
 {
-
-	Menus Menu;
-	Board bd;
+	
+	Board bd; // Create a single Board instance
 	bool play_again = true;
+	Validator validate(&bd);
+	Menus menu(&bd);
 
 	cout << "\nWelcome to tic Tac Toe Game - Human vs Human\n" << endl;
 
 	while (play_again)
 	{
-		int choice = Menu.main_menu();
+		int choice = menu.main_menu();
 
 		if (choice == 1)
 		{
@@ -80,10 +82,10 @@ int main()
 
 			game.start();
 		}
-
-		string user_again;
+		
 		cout << "\nDo you want to play again? - type 'yes' or 'no'";
-		cin >> user_again;
+		string user_again;
+		user_again = validate.main_validator("yes","no");
 
 		if (user_again == "yes") {
 			play_again = true;

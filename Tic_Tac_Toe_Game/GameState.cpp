@@ -14,7 +14,9 @@ bool GameState::winning_combo(vector<int> combo)
     }
     else
     {
-        // figure out how to check if there are three copies of the same mark in the list of four indices
+        return board->get_mark(combo.at(0)) == board->get_mark(combo.at(1)) &&
+            board->get_mark(combo.at(1)) == board->get_mark(combo.at(2)) &&
+            board->get_mark(combo.at(2)) == board->get_mark(combo.at(3));
     }
 }
 
@@ -36,6 +38,9 @@ string GameState::current_state(Player* current_player)
         {
             return select_winner(combo_iterator->at(0));
         }
+    }
+    if (board->full_board()) {
+        return "It's a draw"; // Return draw if the board is full
     }
     return "in-progress";
 }

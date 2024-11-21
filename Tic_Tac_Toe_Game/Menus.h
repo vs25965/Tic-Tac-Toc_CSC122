@@ -1,11 +1,13 @@
+#include "Board.h"
+#include "Validator.h"
 #pragma once
-class Menus
-{
+class Menus {
+private:
+    Validator validate; // Declare a Validator object
+    int main_choice;
+
 public:
-
-	int main_choice;
-	int main_menu();
-	int battle_menu();
-
+    Menus(Board* board) : validate(board) {} // Constructor to initialize Validator
+    int main_menu();
+    int battle_menu();
 };
-
