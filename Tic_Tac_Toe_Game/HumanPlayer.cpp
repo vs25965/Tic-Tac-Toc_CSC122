@@ -23,7 +23,6 @@ WinningCombos HumanPlayer::get_winning_combos()
 void HumanPlayer::get_move()
 {
 	    Validator validate(this->board);
-		cout << "What is your move? ";
 		int valid_move = validate.validator(1, 9);
 
 	this->board->move(valid_move, this->mark);

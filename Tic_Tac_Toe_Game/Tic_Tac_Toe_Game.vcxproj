@@ -133,8 +133,10 @@
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManagerReport.cpp" />
     <ClCompile Include="Menus.cpp" />
     <ClCompile Include="pyromancer.cpp" />
+    <ClCompile Include="Report.cpp" />
     <ClCompile Include="swarm.cpp" />
     <ClCompile Include="Validator.cpp" />
   </ItemGroup>
@@ -144,8 +146,10 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="HumanPlayer.h" />
+    <ClInclude Include="ManagerReport.h" />
     <ClInclude Include="Menus.h" />
     <ClInclude Include="pyromancer.h" />
+    <ClInclude Include="Report.h" />
     <ClInclude Include="swarm.h" />
     <ClInclude Include="Validator.h" />
   </ItemGroup>

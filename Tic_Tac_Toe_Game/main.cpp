@@ -10,8 +10,13 @@
 #include "Game.h"
 #include "Validator.h"
 
+#include "ManagerReport.h"
+#include "Report.h"
+
 using namespace std;
 
+
+ManagerReport managerReport;
 int main()
 {
 	
@@ -20,11 +25,18 @@ int main()
 	Validator validate(&bd);
 	Menus menu(&bd);
 
+	Report report;
+
 	cout << "\nWelcome to tic Tac Toe Game - Human vs Human\n" << endl;
+	report.openFile();
 
 	while (play_again)
 	{
 		int choice = menu.main_menu();
+		managerReport.gamesPlay();
+		GameState* game_state = nullptr;
+
+		bool incremented = false; // Flag to track increment
 
 		if (choice == 1)
 		{
@@ -36,6 +48,7 @@ int main()
 			Game game(&console, &game_state, &player_one, &player_two);
 
 			game.start();
+			managerReport.updateResult(game_state.current_state(&player_one));
 
 		}
 		else if (choice == 2)
@@ -48,6 +61,7 @@ int main()
 			Game game(&console, &game_state, &player_one, &player_two);
 
 			game.start();
+			managerReport.updateResult(game_state.current_state(&player_one));
 		}
 		else if (choice == 3)
 		{
@@ -59,6 +73,7 @@ int main()
 			Game game(&console, &game_state, &player_one, &player_two);
 
 			game.start();
+			managerReport.updateResult(game_state.current_state(&player_one));
 		}
 		else if (choice == 4)
 		{
@@ -70,6 +85,7 @@ int main()
 			Game game(&console, &game_state, &player_one, &player_two);
 
 			game.start();
+			managerReport.updateResult(game_state.current_state(&player_one));
 		}
 		else if (choice == 5)
 		{
@@ -81,6 +97,7 @@ int main()
 			Game game(&console, &game_state, &player_one, &player_two);
 
 			game.start();
+			managerReport.updateResult(game_state.current_state(&player_one));
 		}
 		
 		cout << "\nDo you want to play again? - type 'yes' or 'no'";
@@ -89,19 +106,21 @@ int main()
 
 		if (user_again == "yes") {
 			play_again = true;
-
 			bd.clear(); // Reset the game state to "in-progress"
 		
 		}
 		else {
+			
 			play_again = false;
+			
 		}
-
 	}
 
 	cout << "Thank you for playing!" << endl;
-		
 	
+	report.writeReport(managerReport);
+	report.closeFile();
+	managerReport.restoreReport();
 	return 0;
    
 }

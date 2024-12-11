@@ -45,6 +45,12 @@
     <ClCompile Include="Validator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ManagerReport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Report.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="HumanPlayer.h">
@@ -72,6 +78,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Validator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ManagerReport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Report.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

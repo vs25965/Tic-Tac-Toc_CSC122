@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Tic_Tac_Toe_Game"
   ],
-  "SelectedNode": "\\Tic_Tac_Toe_Game.sln",
+  "SelectedNode": "\\Tic_Tac_Toe_Game\\main.cpp",
   "PreviewInSolutionExplorer": false
 }

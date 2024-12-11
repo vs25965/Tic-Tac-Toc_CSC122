@@ -22,9 +22,11 @@ bool GameState::winning_combo(vector<int> combo)
 
 string GameState::select_winner(int cell)
 {
+    
     string output = "";
     output += board->get_mark(cell);
     output += " wins";
+
     return output;
 }
 string GameState::current_state(Player* current_player)
@@ -36,13 +38,14 @@ string GameState::current_state(Player* current_player)
     {
         if (this->winning_combo(*combo_iterator))
         {
+ 
             return select_winner(combo_iterator->at(0));
         }
     }
     if (board->full_board()) {
+  
         return "It's a draw"; // Return draw if the board is full
+        
     }
     return "in-progress";
 }
-
-
